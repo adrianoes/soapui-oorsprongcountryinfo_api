@@ -14,7 +14,7 @@ Commiting for second time and so on:
 
 git status
 git add .
-git commit -m "fixing test execution command on workflow"
+git commit -m "fixing branches instructions on workflow"
 git push -u origin main
 
 (refresh page after api cmds)

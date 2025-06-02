@@ -1,12 +1,11 @@
 name: Run SoapUI Tests
 
 on:
-  workflow_dispatch:
   push:
-    paths:
-      - '**/*.xml'
-      - '**/*.yml'
-      - '**/*.wsdl'
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
 
 jobs:
   soapui-test:
