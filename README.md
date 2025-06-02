@@ -25,5 +25,5 @@ Soap API testing in [Oorsprong Country Info](http://webservices.oorsprong.org/we
 
 # Tips:
 
-- SoapUI can be trick at the first usage, but it is really helpfull to organize test suites and create test cases. 
+- SoapUI can be tricky at the first usage, but it is really helpfull to organize test suites and create test cases. 
 - Trust ChatGPT
