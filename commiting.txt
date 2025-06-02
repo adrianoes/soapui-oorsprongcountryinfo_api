@@ -1,0 +1,30 @@
+Creating a project and commiting for the first time:
+
+git init
+git remote add origin git@github.com:adrianoes/soapui-oorsprongcountryinfo_api.git
+git branch -M main
+git remote set-url origin git@github.com:adrianoes/soapui-oorsprongcountryinfo_api.git
+git status
+git add .
+git commit -m "Project was implemented"
+git push -u origin main
+
+
+Commiting for second time and so on:
+
+git status
+git add .
+git commit -m "Updating docs regarding the need to not use json files"
+git push -u origin main
+
+(refresh page after api cmds)
+size limit----\-------------------------------------------------------------------------\
+commits history are placed in C:\soapui-oorsprongcountryinfo_api\.git\logs\refs\heads
+
+Note:
+when you already commit a file or folder and want to include it in git ignore later, delete the file in the git repositiry and then, in the temrinal, use this: git rm -r --cached cypress/screenshots
+when collection fail in postman, just change the e-mail.
+
+Need to be sure that name will have 4~30 characters 
+Check coerence in constant names, writing and reading
+improve assertion logic

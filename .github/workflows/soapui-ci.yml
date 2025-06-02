@@ -1,0 +1,35 @@
+name: Run SoapUI Tests
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '**/*.xml'
+      - '**/*.yml'
+      - '**/*.wsdl'
+
+jobs:
+  soapui-test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create reports directory
+        run: mkdir reports
+
+      - name: Install SoapUI
+        run: |
+          choco install soapui --version=5.8.0 --no-progress
+
+      - name: Run SOAPUI Tests
+        run: |
+          "soapui\SoapUI-5.8.0\bin\testrunner.bat" -a -r -j -f "reports" "soapui-oorsprongcountryinfo_api.xml"
+        shell: cmd
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: soapui-reports
+          path: reports
