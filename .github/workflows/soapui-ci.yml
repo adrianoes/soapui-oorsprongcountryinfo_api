@@ -18,15 +18,16 @@ jobs:
 
       - name: Create reports directory
         run: mkdir reports
+        shell: pwsh
 
       - name: Install SoapUI
-        run: |
-          choco install soapui --version=5.8.0 --no-progress
+        run: choco install soapui --version=5.8.0 --no-progress
+        shell: pwsh
 
       - name: Run SOAPUI Tests
         run: |
-          "soapui\SoapUI-5.8.0\bin\testrunner.bat" -a -r -j -f "reports" "soapui-oorsprongcountryinfo_api.xml"
-        shell: cmd
+          & 'C:\Program Files\SmartBear\SoapUI-5.8.0\bin\testrunner.bat' -a -r -j -f reports soapui-oorsprongcountryinfo_api.xml
+        shell: pwsh
 
       - name: Upload reports
         uses: actions/upload-artifact@v4
